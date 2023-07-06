@@ -27,7 +27,10 @@
     "autoload": {
         "psr-4": {
             "Eykj\\AliyunSls\\": "src/"
-        }
+        },
+        "files": [
+            "src/Functions.php"
+        ]
     },
     "config": {
         "sort-packages": true
