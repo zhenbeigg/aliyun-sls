@@ -51,7 +51,11 @@ if (!function_exists('alog')) {
             $data = json_encode($data, 320);
         }
         if (env('ALIYUN_SLS_ENDPOINT')) {
-            container()->get(ClientInterface::class)->putLogs([$k => $data]);
+            try{
+                container()->get(ClientInterface::class)->putLogs([$k => $data]);
+            }catch (\Throwable $th) {
+
+            }
         }
     }
 }
